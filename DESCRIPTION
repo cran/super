@@ -1,6 +1,6 @@
 Package: super
 Title: Interpreted String Literals
-Version: 0.0.3
+Version: 0.0.4
 Authors@R: 
     c(
         person(
@@ -40,11 +40,11 @@ Encoding: UTF-8
 RoxygenNote: 7.3.2
 Config/build/compilation-database: true
 NeedsCompilation: yes
-Packaged: 2024-11-21 18:25:33 UTC; tim
+Packaged: 2024-12-16 21:11:24 UTC; tim
 Author: Tim Taylor [aut, cre] (<https://orcid.org/0000-0002-8587-7113>),
   Jim Hester [aut] (<https://orcid.org/0000-0002-2739-7082>),
   Jennifer Bryan [aut] (<https://orcid.org/0000-0002-6983-2759>),
   Posit Software, PBC [cph, fnd]
 Maintainer: Tim Taylor <tim.taylor@hiddenelephants.co.uk>
 Repository: CRAN
-Date/Publication: 2024-11-22 09:00:06 UTC
+Date/Publication: 2024-12-16 21:30:02 UTC
