@@ -3,7 +3,13 @@ title: "super"
 output:
     html:
         meta:
-            css: ["default"]
+            css: ["@default@1.13.67", "@callout@1.13.67", "@article@1.13.67"]
+            js: ["@sidenotes@1.13.67", "@copy-button@1.13.67", "@callout@1.13.67", "@toc-highlight@1.13.67"]
+        options:
+            toc: true
+            js_highlight:
+                package: prism
+                version: 1.29.0
         
 vignette: >
   %\VignetteEngine{litedown::vignette}
@@ -16,12 +22,12 @@ vignette: >
 litedown::reactor(print = NA)
 ```
 
+## Overview
+
 super is a fork / reimplementation of the [glue](https://glue.tidyverse.org)
 package with a focus on efficiency and simplicity at a cost of flexibility.
 
-As of the 0.0.1 release it should be considered 'experimental'.
-
-## Differences from glue
+::: {.callout-important data-legend="Differences from glue"}
 
 - `super::glue()` takes only two arguments: A character string that is used as 
   a template and an environment to look up the embraced inputs. There is no
@@ -48,6 +54,8 @@ As of the 0.0.1 release it should be considered 'experimental'.
   
 - `glue::glue()` arguments (and their associated behaviours) `.comment`,
   `.literal` and `.transformer` are not implemented.
+  
+:::
   
 ## Examples
 
@@ -91,11 +99,8 @@ head(glue("Item {LETTERS}"))
 
 But not over input strings (yet)
 
-```{r}
-tryCatch(
-    glue(letters),
-    error = function(e) conditionMessage(e)
-)
+```{r, error=TRUE}
+glue(letters)
 ```
 
 ## Relative timing benchmarks

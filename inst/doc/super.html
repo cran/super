@@ -3,115 +3,49 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="generator" content="litedown 0.5">
+<meta name="generator" content="litedown 0.6">
 <title>super</title>
-<style type="text/css">
-body {
-  font-family: sans-serif;
-  max-width: 800px;
-  margin: auto;
-  padding: 1em;
-  line-height: 1.5;
-}
-body, .abstract, code, .footnotes, footer, #refs, .caption { font-size: .9em; }
-li li { font-size: .95em; }
-ul:has(li > input[type="checkbox"]) { list-style: none; padding-left: 1em; }
-*, :before, :after { box-sizing: border-box; }
-a { color: steelblue; }
-pre, img { max-width: 100%; }
-pre { white-space: pre-wrap; word-break: break-word; }
-pre code { display: block; padding: 1em; overflow-x: auto; }
-code { font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace; }
-:not(pre) > code, code[class], div > .caption { background-color: #f8f8f8; }
-pre > code:is(:not([class]), .language-plain, .language-none), .box, .figure, .table { background-color: inherit; border: 1px solid #eee; }
-pre > code {
-  &.message { border-color: #9eeaf9; }
-  &.warning { background: #fff3cd; border-color: #fff3cd; }
-  &.error { background: #f8d7da; border-color: #f8d7da; }
-}
-.fenced-chunk { border-left: 1px solid #666; }
-.code-fence {
-  opacity: .4;
-  border: 1px dashed #666;
-  border-left: 2px solid;
-  &:hover { opacity: inherit; }
-}
-.box, .figure, .table, table { margin: 1em auto; }
-div > .caption { padding: 1px 1em; }
-.figure { p:has(img), pre:has(svg) { text-align: center; } }
-.flex-col { display: flex; justify-content: space-between; }
-table {
-  border-top: 1px solid #666;
-  thead th { border-bottom: 1px solid #ddd; }
-  th, td { padding: 5px; font-variant-numeric: tabular-nums; }
-  thead, tfoot, tr:nth-child(even) { background: whitesmoke; }
-}
-blockquote {
-  color: #666;
-  margin: 0;
-  padding: 1px 1em;
-  border-left: .5em solid #eee;
-}
-hr, .footnotes::before { border: 1px dashed #ddd; }
-.frontmatter { text-align: center; }
-#TOC {
-  a { text-decoration: none; }
-  & > ul { padding: 0; }
-  ul { list-style: none; padding-left: 1em; }
-  ul ul { border-left: 1px solid lightsteelblue; }
-}
-table, .body h2 { border-bottom: 1px solid #666; }
-.body .appendix, .appendix ~ h2 { border-bottom-style: dashed; }
-.main-number::after { content: "."; }
-span[class^="ref-number-"] { font-weight: bold; }
-.ref-number-fig::after, .ref-number-tab::after { content: ":"; }
-.cross-ref-chp::before { content: "Chapter "; }
-.cross-ref-sec::before { content: "Section "; }
-.cross-ref-fig::before, .ref-number-fig::before { content: "Figure "; }
-.cross-ref-tab::before, .ref-number-tab::before { content: "Table "; }
-.cross-ref-eqn::before, .MathJax_ref:has(mjx-mtext > mjx-c + mjx-c)::before { content: "Equation "; }
-.abstract, #refs {
-  &::before { display: block; margin: 1em auto; font-weight: bold; }
-}
-.abstract::before { content: "Abstract"; text-align: center; }
-#refs::before { content: "Bibliography"; font-size: 1.5em; }
-.ref-paren-open::before { content: "("; }
-.ref-paren-close::after { content: ")"; }
-.ref-semicolon::after { content: "; "; }
-.ref-and::after { content: " and "; }
-.ref-et-al::after { content: " et al."; font-style: italic; }
-.footnote-ref a {
-  &::before { content: "["; }
-  &::after { content: "]"; }
-}
-section.footnotes {
-  margin-top: 2em;
-  &::before { content: ""; display: block; max-width: 20em; }
-}
-.fade {
-  background: repeating-linear-gradient(135deg, white, white 30px, #ddd 32px, #ddd 32px);
-  opacity: 0.6;
-}
-
-@media print {
-  body { max-width: 100%; }
-  tr, img { page-break-inside: avoid; }
-}
-@media only screen and (min-width: 992px) {
-  body:not(.pagesjs) pre:has(.line-numbers):not(:hover) { white-space: pre; }
-}
-</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@1.13.67/css/default.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@1.13.67/css/callout.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@1.13.67/css/article.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@1.13.67/css/prism-xcode.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@xiee/utils@1.13.67/js/sidenotes.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@xiee/utils@1.13.67/js/copy-button.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@xiee/utils@1.13.67/js/callout.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@xiee/utils@1.13.67/js/toc-highlight.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
 </head>
 <body>
 <div class="frontmatter">
 <div class="title"><h1>super</h1></div>
 </div>
 <div class="body">
+<div id="TOC">
+<ul>
+<li><a href="#sec:overview">Overview</a></li>
+<li><a href="#sec:examples">Examples</a>
+<ul>
+<li><a href="#sec:simple-concatenation_1">Simple concatenation</a></li>
+<li><a href="#sec:list-like-input">list-like input</a></li>
+<li><a href="#sec:trimmed-output_1">Trimmed output</a></li>
+<li><a href="#sec:partially-vectorised">Partially vectorised</a></li>
+</ul>
+</li>
+<li><a href="#sec:relative-timing-benchmarks">Relative timing benchmarks</a>
+<ul>
+<li><a href="#sec:simple-concatenation_2">Simple concatenation</a></li>
+<li><a href="#sec:data-frame-input">Data frame input</a></li>
+<li><a href="#sec:trimmed-output_2">Trimmed output</a></li>
+<li><a href="#sec:vectorized-performance">Vectorized performance</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="sec:overview">Overview</h2>
 <p>super is a fork / reimplementation of the <a href="https://glue.tidyverse.org">glue</a>
 package with a focus on efficiency and simplicity at a cost of flexibility.</p>
-<p>As of the 0.0.1 release it should be considered ‘experimental’.</p>
-<h2 id="sec:differences-from-glue">Differences from glue</h2>
+<div class="callout-important" data-legend="Differences from glue">
 <ul>
 <li>
 <p><code>super::glue()</code> takes only two arguments: A character string that is used as
@@ -147,6 +81,7 @@ where the arguments will be recycled to the length of the longest one.</p>
 <code>.literal</code> and <code>.transformer</code> are not implemented.</p>
 </li>
 </ul>
+</div>
 <h2 id="sec:examples">Examples</h2>
 <pre><code class="language-r">library(super)
 </code></pre>
@@ -186,12 +121,9 @@ cat(out)
 <pre><code>#&gt; [1] &quot;Item A&quot; &quot;Item B&quot; &quot;Item C&quot; &quot;Item D&quot; &quot;Item E&quot; &quot;Item F&quot;
 </code></pre>
 <p>But not over input strings (yet)</p>
-<pre><code class="language-r">tryCatch(
-    glue(letters),
-    error = function(e) conditionMessage(e)
-)
+<pre><code class="language-r">glue(letters)
 </code></pre>
-<pre><code>#&gt; [1] &quot;`x` must be a character vector of length &lt;= 1.&quot;
+<pre><code class="language-plain error">#&gt; `x` must be a character vector of length &lt;= 1.
 </code></pre>
 <h2 id="sec:relative-timing-benchmarks">Relative timing benchmarks</h2>
 <pre><code class="language-r">library(microbenchmark)
@@ -210,11 +142,11 @@ microbenchmark(
 )
 </code></pre>
 <pre><code>#&gt; Unit: relative
-#&gt;     expr       min        lq      mean    median        uq       max neval
-#&gt;  sprintf  1.000000  1.000000  1.000000  1.000000  1.000000  1.000000   100
-#&gt;   paste0  2.809793  2.615129  2.415474  2.306486  2.194263  3.386770   100
-#&gt;    super  9.188324  8.519534  7.446570  7.590877  7.177966  2.339689   100
-#&gt;     glue 71.885122 66.026600 56.132232 57.399857 53.404824 22.676789   100
+#&gt;     expr       min        lq      mean    median        uq        max neval
+#&gt;  sprintf  1.000000  1.000000  1.000000  1.000000  1.000000  1.0000000   100
+#&gt;   paste0  2.782214  2.587956  2.197582  2.400856  2.214942  0.4580382   100
+#&gt;    super  9.072595  8.454834  7.399279  7.960057  7.165952  2.4771410   100
+#&gt;     glue 72.822142 66.567353 55.934250 60.870185 53.413350 23.1062460   100
 </code></pre>
 <h3 id="sec:data-frame-input">Data frame input</h3>
 <pre><code class="language-r">dat &lt;- head(cbind(car = rownames(mtcars), mtcars))
@@ -229,11 +161,11 @@ microbenchmark(
 )
 </code></pre>
 <pre><code>#&gt; Unit: relative
-#&gt;     expr       min        lq      mean    median        uq        max neval
-#&gt;  sprintf  1.000000  1.000000  1.000000  1.000000  1.000000  1.0000000   100
-#&gt;   paste0  1.587678  1.563839  1.485010  1.508394  1.464073  0.9230935   100
-#&gt;    super  2.721268  2.658704  2.685844  2.630165  2.590881  4.4618708   100
-#&gt;     glue 17.004739 16.356809 15.542463 15.593492 15.011793 13.4405919   100
+#&gt;     expr       min        lq      mean    median        uq       max neval
+#&gt;  sprintf  1.000000  1.000000  1.000000  1.000000  1.000000  1.000000   100
+#&gt;   paste0  1.659456  1.572940  1.586798  1.546465  1.484524  3.337508   100
+#&gt;    super  2.826638  2.656737  2.653470  2.668520  2.543139  3.301033   100
+#&gt;     glue 17.709209 16.457545 15.890143 15.975113 15.309042 15.412523   100
 </code></pre>
 <h3 id="sec:trimmed-output_2">Trimmed output</h3>
 <pre><code class="language-r">microbenchmark(
@@ -254,7 +186,7 @@ microbenchmark(
 <pre><code>#&gt; Unit: relative
 #&gt;   expr      min       lq     mean   median       uq      max neval
 #&gt;  super 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000   100
-#&gt;   glue 3.990873 3.899043 3.851199 3.749572 3.793755 5.736167   100
+#&gt;   glue 4.069276 3.966611 3.808481 3.859277 3.831744 1.549241   100
 </code></pre>
 <h3 id="sec:vectorized-performance">Vectorized performance</h3>
 <p>For larger input with both <code>glue::glue()</code> and <code>super::glue()</code>, the performance
@@ -271,14 +203,12 @@ microbenchmark(
 )
 </code></pre>
 <pre><code>#&gt; Unit: relative
-#&gt;     expr      min       lq     mean   median       uq       max neval
-#&gt;  sprintf 1.298569 1.235469 1.235672 1.217288 1.216241 1.2166476   100
-#&gt;   paste0 1.000000 1.000000 1.000000 1.000000 1.000000 1.0000000   100
-#&gt;    super 1.001219 1.002083 1.000829 1.009949 1.003257 0.7945002   100
-#&gt;     glue 1.151783 1.135898 1.154771 1.125354 1.187956 0.9922069   100
+#&gt;     expr       min        lq     mean   median        uq      max neval
+#&gt;  sprintf 1.3168538 1.3193258 1.316968 1.319494 1.3007045 1.444807   100
+#&gt;   paste0 0.9935842 0.9997267 1.001962 1.014473 0.9986161 1.012222   100
+#&gt;    super 1.0000000 1.0000000 1.000000 1.000000 1.0000000 1.000000   100
+#&gt;     glue 1.1014867 1.1357466 1.140687 1.142420 1.1223596 1.202891   100
 </code></pre>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
 </body>
 </html>
