@@ -1,3 +1,7 @@
+# super 0.1.1
+
+- Internal (non-user facing) changes.
+
 # super 0.1.0
 
 - Removed the 'experimental' warning from both the README and vignette. The

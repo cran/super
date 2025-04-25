@@ -44,13 +44,6 @@ SOFTWARE.
 #define DELIM_CLOSE '}'
 
 /*
- Note: We use a static variable as the R_getVar function in 4.5.0 will error
-       if it cannot find the variable in the environment. We must then use
-       an on.exit function to clean up on error/user interrupt.
- */
-static char* str;
-
-/*
  Note: It looks like R 4.5.0 will gain a useful function R_getVar. This is a
        slight variation on that function that should keep things working in
        earlier releases. The only difference a user should see is a slight
@@ -131,12 +124,11 @@ static SEXP resize(SEXP out, R_xlen_t n)
 
 SEXP glue(SEXP x, SEXP env)
 {
-    str = NULL;
     enum state {TEXT, ESCAPE, DELIM};
 
     const char* xx = Rf_translateCharUTF8(STRING_ELT(x, 0));
     size_t str_len = strlen(xx);
-    str = (char*) R_Calloc(str_len + 1, char);
+    char* str = R_alloc(str_len + 1, 1);
 
     SEXP out = Rf_allocVector(VECSXP, 1);
     PROTECT_INDEX out_idx;
@@ -232,14 +224,4 @@ SEXP glue(SEXP x, SEXP env)
     out = resize(out, k);
     UNPROTECT(1);
     return out;
-}
-
-SEXP glue_free(void)
-{
-    if (str != NULL)
-    {
-        R_Free(str);
-    }
-    str = NULL;
-    return R_NilValue;
 }

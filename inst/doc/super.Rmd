@@ -70,7 +70,7 @@ bar <- "baz"
 glue("foo{bar}")
 ```
 
-### list-like input
+### List-like input
 
 ```{r}
 dat <- head(cbind(car = rownames(mtcars), mtcars))

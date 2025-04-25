@@ -11,7 +11,7 @@ install.packages("super")
 
 ## Vignettes
 
-An brief overview of super is provided in the vignette distributed with the
+A brief overview of super is provided in the vignette distributed with the
 package:
 
 * `vignette("super", package = "super")`

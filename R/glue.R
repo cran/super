@@ -68,7 +68,6 @@ glue <- function(x, env = parent.frame()) {
 		env <- list2env(env)
 	}
 
-	on.exit(.Call(C_glue_free))
 	res <- .Call(C_glue, x, env)
 	if (any(vapply(res, is.function, TRUE)))
 		stop("`glue()` cannot interpolate functions into strings.")
@@ -93,7 +92,6 @@ glut <- function(x, env = parent.frame()) {
 
 	x <- trim(x)
 
-	on.exit(.Call(C_glue_free))
 	res <- .Call(C_glue, x, env)
 	if (any(vapply(res, is.function, TRUE)))
 		stop("`glue()` cannot interpolate functions into strings.")

@@ -5,12 +5,10 @@
 
 /* .Call calls */
 extern SEXP glue(SEXP, SEXP);
-extern SEXP glue_free(void);
 extern SEXP trim(SEXP);
 
 static const R_CallMethodDef CallEntries[] = {
     {"glue",      (DL_FUNC) &glue,      2},
-    {"glue_free", (DL_FUNC) &glue_free, 0},
     {"trim",      (DL_FUNC) &trim,      1},
     {NULL, NULL, 0}
 };
